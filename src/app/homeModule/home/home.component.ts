@@ -17,14 +17,13 @@ video:boolean=false;
   constructor(private dataService:DataServiceService,
               private modalService:NgbModal) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getData()
+    this.dataService.getAds().subscribe(e=>console.log(e))
   }
 getData(){
   this.dataService.getAllAds().subscribe(e=>{
-  console.log(typeof(e))
-
-  console.log(e)
+  
   this.adss=e;
 
 })
@@ -36,6 +35,10 @@ editAd(ad){
         this.getData()      
     }).catch(dismissReason => {
     });
+    adPopUp.result.then(res=>{
+      this.getData()
+      res.dismiss('Cross click')
+    })
     adPopUp.componentInstance.ad=ad
   }
   deleteAd(ad){

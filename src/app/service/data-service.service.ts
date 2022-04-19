@@ -14,5 +14,14 @@ export class DataServiceService {
   getAllAds(){
     return this.http.get<Ads[]>(`${environment.ApiURL}`)
   }
+
+  addAd({action}){
+    this.store.dispatch({ type: "Add_Data",
+    payload: action})
+  }
+
+  getAds(){
+   return this.store.select('reducer')
+  }
 }
 

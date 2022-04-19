@@ -1,15 +1,25 @@
-import {Get_Data} from '../actions/actions'
-
+import {Edit_Data, Add_Data, Delete_Data} from '../actions/actions'
 const initialState= {
-    mainData:"no data"
+    mainData:[]
  }
 
 export function reducer(state = initialState, action?){
+
     switch(action.type){
-        case Get_Data:
+        case Edit_Data:
             return {
                 ...state,
-            mainData:'' }
+            mainData:action.payload }
+            case Add_Data:
+                return{
+                    ...state,
+                    mainData:state.mainData.push(action.payload)
+                }
+                case Delete_Data:
+                return{
+                    ...state,
+                    mainData:state.mainData.filter(el=> el.id!=action.payload)
+                }
     }
     return state
 }

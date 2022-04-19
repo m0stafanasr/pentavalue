@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { DataServiceService } from '../service/data-service.service';
+import { Add_Data } from '../store/actions/actions';
 @Component({
   selector: 'app-add-new',
   templateUrl: './add-new.component.html',
@@ -11,7 +13,7 @@ itemForm:FormGroup
 ad  
 newAd
 constructor( public activeModal:NgbActiveModal,
-  private fb: FormBuilder) { }
+  private fb: FormBuilder, private dataService:DataServiceService) { }
 
   ngOnInit(): void {
     this.createForm();
@@ -37,6 +39,11 @@ constructor( public activeModal:NgbActiveModal,
   }
 
   saveAd(){
-
+    this.dataService.addAd({action: this.itemForm.value});
+      
   }
 }
+function payload(type: any, arg1: string, payload: any, itemForm: FormGroup): { action: any; } {
+  throw new Error('Function not implemented.');
+}
+
