@@ -1,0 +1,33 @@
+$content-padding: 2rem !default;
+
+.nav {
+    background-color: rgb(255, 85, 85);
+   
+  }
+  .navbar {
+    min-height: calc(100% - 3.35rem);
+    flex-basis: 100%;
+    transition: 300ms ease all;
+    margin-left: 0;
+   padding: 0.8rem 1rem;
+  }
+  .navbar-nav .nav-link {
+    color: white;
+  }
+  .link-buttons {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    height: 2.5rem;
+    width: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: "Montserrat", Helvetica, Arial, serif;
+  }
+  .navbar-header {
+    width: calc(100vw - (100vw - 100%) - calc(#{$content-padding} * 2));
+    box-shadow: 0 4px 24px 0 rgb(34 41 47 / 10%);
+    border-radius: 0.428rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.3rem;
+  }
