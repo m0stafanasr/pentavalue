@@ -1,4 +1,16 @@
-# Pentavalue
+# main data
+
+this repository is about fetching data from external API and do the Crud operations on it while the login is authenticated using firebase and angular auth guards
+
+- inside the repository you can login using the number +1 1111111
+
+- you will find that you can't go to /HOME if you aren't logged in, and if you logged using the number above you can logout simply from the side. 
+
+- used reactive forms for the add and edit.
+
+- the design is responsive and will fit with any size inside the window.
+
+# Pentavalue Task
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
