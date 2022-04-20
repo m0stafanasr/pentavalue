@@ -11,7 +11,7 @@ export class AuthAdsGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    if(localStorage.getItem('id'))
+    if(localStorage.getItem('verificationId'))
       {
         return true;
       }
@@ -24,7 +24,7 @@ export class AuthAdsGuard implements CanActivate {
         
         })
       //  alert ('please LOGIN first so you can Join our world..');
-        this.router.navigate(['/Login']);
+        this.router.navigate(['']);
         return false
       }
     

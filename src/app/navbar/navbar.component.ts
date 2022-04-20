@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbNav, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { AddNewComponent } from '../add-new/add-new.component';
 import { DataServiceService } from '../service/data-service.service';
@@ -11,7 +12,8 @@ import { DataServiceService } from '../service/data-service.service';
 export class NavbarComponent implements OnInit {
 
   constructor(private modalService: NgbModal,
-    private dataService:DataServiceService) { }
+    private dataService:DataServiceService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -28,5 +30,10 @@ export class NavbarComponent implements OnInit {
 
   getAds(){
     this.dataService.getAllAds().subscribe(e=>console.log(e))
+  }
+
+  logOut(){
+    localStorage.removeItem('verificationId');
+    this.router.navigate(['']);
   }
 }
